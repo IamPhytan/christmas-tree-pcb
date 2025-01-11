@@ -1,67 +1,30 @@
 # Christmas Tree PCB
 
-## Christmas Tree Shape
+> 'Tis the Season for Makers
 
-The Christmas Tree shape has been drawn on the Edge Cuts layer.
- of the christmas tree
+<!-- TODO: Video -->
 
-All informations about the design of the Christmas Tree Shape, including the Solder Mask are given [here](mcad).
+## Instructions
 
-## PCB
+<!-- TODO: BOM / Components -->
 
-All informations about the PCB are given in the [`pcb`](pcb) directory.
+A complete instruction guide is available in [`how-to.md`](how-to.md).
 
-## Flashing the ATTiny MCU
+## License
 
-I used [`pymcuprog`](https://github.com/microchip-pic-avr-tools/pymcuprog) to program the ATTINY202-SSFR. You can install `pymcuprog` using pip:
+This project is distributed under a [CERN-OHL-P-2.0](LICENSE) license.
 
-```sh
-pip install pymcuprog
-```
+## Acknowledgments
 
-:construction: Documentation in progress :construction:
-TODO: Add circ
+Thanks to @nadarbreicq for helping me choose the right family of ATtiny for my project needs.
+Both Barbatronic and Heliox made good videos for anyone starting projects with ATtiny microcontrollers:
 
-<!-- Circuit -->
-<!-- https://github.com/microchip-pic-avr-tools/pymcuprog?tab=readme-ov-file#serial-port-updi-pyupdi -->
+* @nadarbreicq - _Create flexible circuits with a vinyl cutter to make robots!_: https://youtu.be/GuyE88zjXyU
+* @HelioxLab - _Program microcontrollers for your circuit boards! (ATtiny)_: https://youtu.be/KPtmi16cyaA
 
-VDD = 3.3V logic level
+This project has been realized with the following stack of Free Open-Source Software. Thanks to the maintainers and contributors of these software tools:
 
-I used a [FT232RL USB to TTL](https://www.amazon.ca/dp/B01JG8H5U4) Serial Adapter Module to connect my circuit to a USB port. One can also use an adapter like [this breakout](https://www.sparkfun.com/products/9873) from Sparkfun or [this console cable](https://www.adafruit.com/product/954) from Adafruit
-
-
-```
-                        Vcc                     Vcc
-                        +-+                     +-+
-                         |                       |
- +---------------------+ |                       | +--------------------+
- | Serial port         +-+                       +-+  AVR device        |
- |                     |      +----------+         |                    |
- |                  TX +------+   1k     +---------+ UPDI               |
- |                     |      +----------+    |    |                    |
- |                     |                      |    |                    |
- |                  RX +----------------------+    |                    |
- |                     |                           |                    |
- |                     +--+                     +--+                    |
- +---------------------+  |                     |  +--------------------+
-                         +-+                   +-+
-                         GND                   GND
-```
-
-To test that your ATTiny will be flashed correctly with `pymcuprog`, you can ping it with:
-
-```console
-pymcuprog ping -d attiny202 -t uart -u /dev/<device-port>
-```
-
-You can also read some bytes from the flash memory space with this command, where we read `64` bytes from a offset `0x100`
-
-```console
-pymcuprog read -m flash -o 0x0100 -b 64 -d attiny202 -t uart -u /dev/<device-port>
-```
-
-
-## Some references
-
-* [JTAG2UPDI and SerialUPDI](https://teddywarner.org/Projects/SerialUPDI)
-
+* [FreeCAD](https://www.freecad.org) for the outline
+* [Inkscape](https://inkscape.org) for the decoration and the art on the PCB
+* [KiCAD](https://www.kicad.org) for the PCB design
+* [PlatformIO](https://platformio.org) for programming
