@@ -65,6 +65,8 @@ You can verify that the MCU is properly programmed by adding the LED circuit of 
 
 ## PCB Shape and Art
 
+<!-- TOOD: Complete this text -->
+
 The shape of the PCB was
 
 This section gives all informations about the design of the Christmas Tree Shape, from the the Solder Mask are given [here](mcad).
@@ -84,10 +86,13 @@ The golden star and garlands are drawn using the front copper layer and a solder
 | ---------------------------- | ----------------------------- |
 | ![Mask](mcad/front-mask.svg) | ![Garland](mcad/garlands.svg) |
 
-
 ## PCB Design and Assembly
 
 The PCB has been designed with KiCad 8.0.7. All components files are available in the KiCad component libraries or in the project libraries in [`pcb/lib/`](pcb/lib).
+
+| Front                    | Back                   |
+| ------------------------ | ---------------------- |
+| ![Front](docs/front.png) | ![Back](docs/back.png) |
 
 ### Printing or ordering the PCB
 
@@ -100,7 +105,7 @@ For the best results when ordering, I recommend:
 ### Assembly
 
 The PCB was designed to be easily soldered by hand, as I used this project as an opportunity how to solder SMD components by hand.
-Hence why all resistors and LEDs are 1206.
+Hence why all resistors and LEDs are 1206 (3216 Metric).
 
 If you never soldered SMDs before, a good practice is to start with small components.
 Hence, for this PCB, I would recommend soldering the components in the following order:
@@ -116,10 +121,15 @@ Hence, for this PCB, I would recommend soldering the components in the following
   * You can then adjust the position of the retainer by iteratively moving it while melting the solder on a pad. Once the retainer is well placed, add more solder above each flap so that you're sure that it won't easily break out.
 * Finally, solder the through-hole switch. Once soldered, I recommend using a wire cutter to cut the tips of the leads.
 
+## A final touch-up
+
+To hang the PCB in a tree, you can pass a satin ribbon through the top hole.
+As the hole has a diameter of 5 mm, a 3 mm (1/8 inch) wide ribbon does the job.
 
 ## Sources
 
-* Programming with UPDI:
-  * [JTAG2UPDI and SerialUPDI](https://teddywarner.org/Projects/SerialUPDI)
-  * [SerialUPDI Programmer](https://github.com/wagiminator/AVR-Programmer/tree/master/SerialUPDI_Programmer)
+**Programming with UPDI:**
+
+* [JTAG2UPDI and SerialUPDI](https://teddywarner.org/Projects/SerialUPDI)
+* [SerialUPDI Programmer](https://github.com/wagiminator/AVR-Programmer/tree/master/SerialUPDI_Programmer)
 
